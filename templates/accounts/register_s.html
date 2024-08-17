@@ -1,8 +1,49 @@
-{% extends 'layout/base_fullscreen' %}
+{% extends 'layout/base_fullscreen.html' %}
 
 
 
 {% block content %}
     <h1>Seller Register</h1>
+    <div class="container">
+        <div class="col-md-5 border border-3 border-primary p-5 rounded-4">
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <h2 class="mb-3">
+                    Register
+                </h2>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" id="formId1" placeholder="username" />
+                    <label for="formId1">username</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="password" id="formId2"
+                        placeholder="password" />
+                    <label for="formId2">password</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" name="cpassword" id="formId3"
+                        placeholder="confirm password" />
+                    <label for="formId3">Confirm Passowrd</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="email" id="formId4" placeholder="email" />
+                    <label for="formId4">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="first_name" id="formId5" placeholder="email" />
+                    <label for="formId5">First Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="last name" id="formId6" placeholder="email" />
+                    <label for="formId6">Last Name</label>
+                </div>
+                <button class="btn btn-lg btn-primary">Login</button>
+
+
+            </form>
+
+        </div>
+    </div>
 {% endblock content %}
     
