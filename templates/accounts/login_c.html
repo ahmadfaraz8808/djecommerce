@@ -16,16 +16,17 @@
             </h2>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" name="username" id="formId1" placeholder="Your email" />
-                <label for="formId1">username</label>
+                <label for="formId1">Username</label>
             </div>
             <div class="form-floating mb-3">
                 <input type="password" class="form-control" name="password" id="formId2" placeholder="Your password" />
-                <label for="formId1">password</label>
+                <label for="formId1">Password</label>
             </div>
             <button class="btn btn-lg btn-primary">Login</button>
-
-
-            Don't have an Account?<a href="{% url 'register' %}">Register</a>
+            <br>
+            <div class="py-4 px-4">
+                Don't have an Account?<a href="{% url 'register' %}">Register</a>
+            </div>
         </form>
     </div>
 

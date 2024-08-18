@@ -39,6 +39,17 @@
         <header>
             <!-- place navbar here -->
              {% include 'components/header.html' %}
+             {% if messages %}
+
+             {% for message in messages %}
+             <div class="alert alert-{{message.tags}}" role="alert">
+                 <strong>{{message}}</strong>
+             </div>
+     
+             {% endfor %}
+     
+             {% endif %}
+     
         </header>
         <main>
             <!-- here we created a block named content to call the code of index.html file -->
