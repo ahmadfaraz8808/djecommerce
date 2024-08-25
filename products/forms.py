@@ -3,20 +3,20 @@ from .models import*
 
 class CategoryForm(forms.ModelForm):
     class Meta:
-        model=Category
+        model = Category
         fields ='__all__'    #display all fields
 
 class ProductForm(forms.ModelForm):
     class Meta:
-        model= Product
+        model = Product
         fields=['title','brand','category','price','description','image']
 
 class ProductImageForm(forms.ModelForm):
     class Meta:
-        model=ProductImage
+        model = ProductImage
         fields=['image']
 
 class ProductReviewForm(forms.ModelForm):
     class Meta:
-        model=ProductReview
+        model = ProductReview
         fields=['rating','review']

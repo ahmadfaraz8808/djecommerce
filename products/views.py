@@ -4,13 +4,14 @@ from .forms import*
 from django.contrib import messages
 
 # Create your views here.
-def category_list(request):
+
+def category_list(request):            #for category view
     return render(
         request,
-        'products/category_list.html',
+        'products/category_list.html',   #from folder(products)--->file(category_list)
         {
-        'categories':Category.objects.all(),
-        'form': CategoryForm()
+        'categories': Category.objects.all(),       #extract all objects from Category
+        'form': CategoryForm()                      #extract form i.e CategoryForm
         }
     )
 
@@ -21,15 +22,15 @@ def category_create(request):
         form.save()
     else:
         messages.error(request,'Error creating category')
-    return redirect('creating_list')
+    return redirect('category_list') 
 
 def category_edit(request, slug):
     pass 
 def category_delete(request, slug):
     pass 
-def product_list(request, slug):
+def product_list(request):
     pass 
-def product_create(request, slug):
+def product_create(request):
     pass 
 def product_edit(request, slug):
     pass 
