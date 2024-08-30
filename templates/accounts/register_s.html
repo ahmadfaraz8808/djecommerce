@@ -3,8 +3,11 @@
 
 
 {% block content %}
-    <h1>Seller Register</h1>
-    <div class="container">
+<!-- <h1>Seller Register</h1> -->
+<div class="container-fluid"
+    style="background-image: url(/media/seller_register.jpg); background-size: cover; background-repeat: no-repeat; height: 100%;">
+    <h1 style="text-align: center; padding-top: 30px;">Seller Registration</h1>
+    <div class="row justify-content-center py-4">
         <div class="col-md-5 border border-3 border-primary p-5 rounded-4">
 
             <form action="" method="post">
@@ -17,8 +20,7 @@
                     <label for="formId1">username</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="password" id="formId2"
-                        placeholder="password" />
+                    <input type="password" class="form-control" name="password" id="formId2" placeholder="password" />
                     <label for="formId2">password</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -35,7 +37,7 @@
                     <label for="formId5">First Name</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" name="last name" id="formId6" placeholder="email" />
+                    <input type="text" class="form-control" name="last_name" id="formId6" placeholder="email" />
                     <label for="formId6">Last Name</label>
                 </div>
                 <button class="btn btn-lg btn-primary">Login</button>
@@ -45,5 +47,5 @@
 
         </div>
     </div>
+</div>
 {% endblock content %}
-    

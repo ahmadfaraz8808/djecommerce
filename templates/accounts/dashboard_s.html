@@ -3,6 +3,28 @@
 
 
 {% block content %}
-    <h1>Seller Dashboard</h1>
+<div class="container my-5 ">
+    <div class="row">
+        <div class="col-2 p-2">
+            <div class="card">
+                <div class="card-body d-grid">
+                    <h5 class="card-title">Category</h5>
+
+                    <a href="{% url 'category_list' %}" class="btn btn-sm btn-success">Add Category</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-2 p-2">
+            <div class="card">
+                <div class="card-body d-grid">
+                    <h5 class="card-title">Product</h5>
+
+                    <a href="{% url 'product_create' %}" class="btn btn-sm btn-primary">Add Product</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
-    

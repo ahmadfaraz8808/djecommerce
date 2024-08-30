@@ -11,9 +11,15 @@
                     <a class="nav-link active" href="#" aria-current="page">Home<span
                             class="visually-hidden">(current)</span></a>
                 </li>
+                
+                {% if user.is_authenticated and user.groups.all.0.name == 'seller' %}
+                    
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'category_list' %}">Category List</a>
+                    <a class="nav-link" href="{% url 'category_list' %}">Category</a>
                 </li>
+                    
+                {% endif %}
+                    
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Dropdown</a>

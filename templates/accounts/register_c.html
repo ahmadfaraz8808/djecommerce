@@ -3,8 +3,10 @@
 
 
 {% block content %}
-    <h1>Customer Register</h1>
-    <div class="container">
+<div class="container-fluid"
+    style="background-image: url(/media/customer_register.jpg); background-size: cover; background-repeat: no-repeat; height: 100%;">
+    <h1 style="text-align: center; padding-top: 30px;">Customer Register</h1>
+    <div class="row justify-content-center py-4" >
         <div class="col-md-5 border border-3 border-primary p-5 rounded-4">
 
             <form action="" method="post">
@@ -17,13 +19,11 @@
                     <label for="formId1">username</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="password" id="formId2"
-                        placeholder="******" />
+                    <input type="password" class="form-control" name="password" id="formId2" placeholder="******" />
                     <label for="formId2">password</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="cpassword" id="formId3"
-                        placeholder="******" />
+                    <input type="password" class="form-control" name="cpassword" id="formId3" placeholder="******" />
                     <label for="formId3">Confirm Password</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -45,6 +45,6 @@
 
         </div>
     </div>
+</div>
 
 {% endblock content %}
-    

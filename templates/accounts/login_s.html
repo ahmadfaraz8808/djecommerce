@@ -3,9 +3,12 @@
 
 
 {% block content %}
-    <h1>Seller Login</h1>
+<!-- <h1>Seller Login</h1> -->
 
-    <div class="container">
+<div class="container-fluid"
+    style="background-image:url(/media/seller_login.jpg); background-size: cover; background-repeat: no-repeat; height: 100vh; ">
+    <h1 style="text-align: center; padding-top: 30px;">Seller Login</h1>
+    <div class="row justify-content-center py-4">
         <div class="col-md-5 border border-3 border-primary p-5 rounded-4">
 
             <form action="" method="post">
@@ -18,14 +21,16 @@
                     <label for="formId1">username</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" name="password" id="formId2" placeholder="Your password" />
+                    <input type="password" class="form-control" name="password" id="formId2"
+                        placeholder="Your password" />
                     <label for="formId1">password</label>
                 </div>
                 <button class="btn btn-lg btn-primary">Login</button>
-                
+
 
                 Don't have an Account?<a href="{% url 'seller_register' %}">Register</a>
             </form>
         </div>
     </div>
+</div>
 {% endblock content %}
