@@ -1,0 +1,41 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block css %}
+<style>
+    .card {
+        width: 444px;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-body-secondary p-2 text-center">
+    <h3>
+        Wishlisted Products
+    </h3>
+</div>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-3">
+            <!-- LATER -->
+        </div>
+        <div class="col-md-9 mx-auto">
+            <div class="container">
+                <div class="row">
+                    {% for item in wishlist %}
+                    <div class="col-md-4">
+                        {% include 'components/wishlist_card.html' with product=item.product %}
+                    </div>
+                    {% empty %}
+                    <div class="alert alert-warning" role="alert">
+                        No products found.
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

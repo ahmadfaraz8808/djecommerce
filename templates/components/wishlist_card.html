@@ -18,25 +18,16 @@
         </div>
         <!-- action as customer -->
         {% if user.is_authenticated and user.groups.all.0.name == 'customer' %}
-        <div class="d-flex justify-content-between mt-2">
-            <a href="{% url 'wishlist_add' product.slug %}" class="btn btn-secondary">
-                <i class="fas fa-heart"></i> Wishlist
+        <div class="d-flex justify-content-between mt-2 gap-2">
+            <a href="{% url 'wishlist_remove' product.slug %}" class="btn btn-danger">
+                <i class="fas fa-heart"></i> Remove
             </a>
             <a href="#" class="btn btn-success">
                 <i class="fas fa-shopping-cart"></i> Add to Cart
             </a>
         </div>
         {% endif %}
-        {% if user.is_authenticated and user.groups.all.0.name == 'seller' %}
-        <div class="d-flex justify-content-between mt-2 gap-2">
-            <a href="{% url 'product_edit' product.slug %}" class="btn btn-warning w-100">
-                <i class="fas fa-edit"></i> Edit
-            </a>
-            <a href="{% url 'product_delete' product.slug %}" class="btn btn-danger w-100">
-                <i class="fas fa-trash"></i> Delete
-            </a>
-        </div>
-        {% endif %}
+        
     </div>
 </div>
 </div>

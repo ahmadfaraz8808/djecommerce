@@ -1,0 +1,59 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container p-2 text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="breadcrumb">
+                <a class="breadcrumb-item" href="{% url 'index' %}">
+                    <i class="fas fa-home"></i>
+                </a>
+                <a class="breadcrumb-item" href="{% url 'product_list' %}">
+                    Products
+                </a>
+                <a class="breadcrumb-item" href="{% url 'product_list_by_category' product.category.slug %}">
+                    {{ product.category }}
+                </a>
+                <span class="breadcrumb-item active" aria-current="page">
+                    {{ product.title }}
+                </span>
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.name }}">
+        </div>
+        <div class="col-md-8">
+            <h1>{{ product.title }}</h1>
+            <p>{{ product.description }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <p>Category: {{ product.category }}</p>
+            <p>Brand: {{ product.brand }}</p>
+
+            {% comment %}
+            <p>Created: {{ product.created_at.date }}</p>
+            <p>Updated: {{ product.updated_at.date }}</p>
+            {% endcomment %}
+
+            {% if user.is_authenticated and user.groups.all.0.name == 'seller' %}
+            <a href="{% url 'product_edit' product.slug %}" class="btn btn-primary">
+                <i class="fas fa-edit"></i> Edit Product
+            </a>
+            <a href="{% url 'product_delete' product.slug %}" class="btn btn-danger">
+                <i class="fas fa-trash"></i> Delete Product
+            </a>
+            <!-- image add -->
+            <a href="" class="btn btn-success">
+                <i class="fas fa-plus"></i> Add Image
+            </a>
+            {% else %}
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
