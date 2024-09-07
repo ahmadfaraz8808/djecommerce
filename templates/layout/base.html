@@ -39,17 +39,17 @@
     <body>
         <header>
             <!-- place navbar here -->
-             {% include 'components/header.html' %}
-             {% if messages %}
+            {% include 'components/header.html' %}
+            {% if messages %}
 
-             {% for message in messages %}
-             <div class="alert alert-{{message.tags}}" role="alert">
-                 <strong>{{message}}</strong>
-             </div>
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}}" role="alert">
+                <strong>{{message}}</strong>
+            </div>
      
-             {% endfor %}
+            {% endfor %}
      
-             {% endif %}
+            {% endif %}
      
         </header>
         <main>

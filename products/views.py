@@ -4,6 +4,7 @@ from .forms import*
 from django.contrib import messages
 from django.utils.text import slugify
 
+
 # Create your views here.
 
 def category_list(request):            #for category view
@@ -18,7 +19,7 @@ def category_list(request):            #for category view
 
 
 def category_create(request):
-    form=CategoryForm(request.POST,request.FILES)
+    form = CategoryForm(request.POST,request.FILES)
     if form.is_valid():
         messages.success(request,'Category created succesfully')
         form.save()
@@ -72,7 +73,7 @@ def product_create(request):
         request,'products/add.html',
         context={'form': form}
         )
-     
+
 def product_edit(request, slug):
     product = get_object_or_404(Product,slug=slug)
     form = ProductForm(instance=product)
@@ -90,7 +91,7 @@ def product_edit(request, slug):
         request,'products/edit.html',
         context={'form': form}
         )
-   
+
 def product_delete(request, slug):
     product = get_object_or_404(Product, slug=slug)
     product.delete()
@@ -104,7 +105,6 @@ def product_detail(request, slug):
         context={'product':product}     #context is for displaying the content in the page
     )
 
-
 def category_product_list(request, category_slug):
     category= get_object_or_404(Category,slug=category_slug)
     return render(
@@ -114,7 +114,7 @@ def category_product_list(request, category_slug):
             'products': Product.objects.filter(category=category)
         }
     )
-    
+
 def product_wishlist(request):
     return render(
         request, 'products/wishlist.html',
@@ -135,6 +135,7 @@ def wishlist_remove(request,slug):
     # back to same page
     return redirect(request.META.get('HTTP_REFERER'))
 
+
 def search(request):
     pass
-        
+

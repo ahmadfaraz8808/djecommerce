@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+
+
+
 # Create your models here.
+
 class Category(models.Model):
     name = models.CharField(max_length=225)                 #the name of category
     logo = models.ImageField(upload_to='category/')         #logo of category
@@ -20,6 +24,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length = 255,unique=True)
     created_at = models.DateTimeField(auto_now_add=True)       
     updated_at = models.DateTimeField(auto_now=True)             
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product,on_delete=models.CASCADE,related_name='product_images')
@@ -41,15 +46,3 @@ class ProductReview(models.Model):
     review = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    
-        
-
-
-    
-    
-    
-    
-    
-    
-    
-    

@@ -22,5 +22,13 @@ urlpatterns = [
     path('wishlist/add/<slug:slug>/', wishlist_add, name='wishlist_add'),
     path('wishlist/remove/<slug:slug>/', wishlist_remove, name='wishlist_remove'),
 
+    #cart
+    # path('cart/add/<slug:slug>/', add_product, name='add_product'),
+    # path('cart/remove/<slug:slug>/', remove_product, name='remove_product'),
+    # path('cart/clear/<slug:slug>/', empty_cart, name='clear_cart'),
+
+    # path('cart/', view_cart, name='view_cart'),
+    # path('cart/,<slug:slug>/increase/', increase_quantity, name='increase_quantity'),
+    # path('cart/,<slug:slug>/decrease/', decrease_quantity, name='decrease_quantity'),
 
 ]
