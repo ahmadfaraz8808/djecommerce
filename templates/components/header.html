@@ -1,3 +1,4 @@
+{% load cart_tags %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="#">DJ Ecommerce</a>
@@ -36,8 +37,14 @@
             <ul class="navbar-nav px-2">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link px-2" href="#" title="cart">
+                    <a class="nav-link px-2" href="{% url 'show_cart' %}" title="cart">
                         <i class="fas fa-shopping-cart text-warning"></i>
+                        <!-- ?? -->
+                        {% cart_item_count as item_count %}                       
+                        {% if item_count %}
+                        <span class="badge bg-danger">{{ item_count }}</span>
+                        {% endif %}
+
                     </a>
                 </li>
                 {% if user.is_superuser %}
@@ -59,7 +66,7 @@
                         <i class="fas fa-user"></i>
                     </a>
                 </li>
-                {% endif %}
+                {%endif %}
                 {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}" title="logout">

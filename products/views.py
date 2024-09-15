@@ -3,6 +3,7 @@ from .models import*
 from .forms import*
 from django.contrib import messages
 from django.utils.text import slugify
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -17,7 +18,7 @@ def category_list(request):            #for category view
         }
     )
 
-
+@login_required
 def category_create(request):
     form = CategoryForm(request.POST,request.FILES)
     if form.is_valid():
@@ -121,6 +122,7 @@ def product_wishlist(request):
         context={'wishlist': Wishlist.objects.filter(user=request.user)}
     )
 
+@login_required
 def wishlist_add(request,slug):
     product = get_object_or_404(Product, slug=slug)
     Wishlist.objects.create(product=product, user=request.user)

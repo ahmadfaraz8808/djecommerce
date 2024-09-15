@@ -2,10 +2,14 @@
     <div class="card p-3 bg-white">
         <div class="about-product text-center mt-2">
             <a href="{% url 'product_detail' product.slug %}" class="text-decoration-none">
-                <h4>{{product.title}}</h4>
-                <img src="{{product.image.url}}" class="img-fluid">
+                <h4>{{product.title|truncatewords:3}}</h4>
+                <img src="{{product.image.url}}" class="img-fluid" style="height: 150px; object-fit: cover;">
                 <div>
-                    <h4>{{product.brand}}</h4>
+                    
+                    {% comment %}
+                    <h4>{{product.title|truncatewords:3}}</h4>
+                    {% endcomment %}
+                        
                     <h6 class="mt-0 text-black-50">{{product.title}}</h6>
                 </div>
             </a>
@@ -29,11 +33,11 @@
         {% else %}
         <!-- action as customer or guest -->
         
-        <div class="d-flex justify-content-between mt-2">
+        <div class="d-flex justify-content-between mt-2 gap-2">
             <a href="{% url 'wishlist_add' product.slug %}" class="btn btn-secondary">
                 <i class="fas fa-heart"></i> Wishlist
             </a>
-            <a href="#" class="btn btn-success">
+            <a href="{% url 'add_product' product.slug %}" class="btn btn-success ">
                 <i class="fas fa-shopping-cart"></i> Add to Cart
             </a>
         </div>

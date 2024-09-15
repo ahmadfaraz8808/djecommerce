@@ -25,6 +25,7 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path('',include('main.urls')),
     path('',include('products.urls')),
+    path('cart/',include('cart.urls')),
 ]
 
 if settings.DEBUG:

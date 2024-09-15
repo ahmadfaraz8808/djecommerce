@@ -1,12 +1,22 @@
 {% extends 'layout/base_fullscreen.html' %}
+{% load static %}
 
+{% block css %}
+<style>
+    main {
+        background-color: aquamarine;
+        background-image: url("{% static 'images/cart_item.png' %}");
+        background-repeat: no-repeat;
+        background-position-x:calc(100% - 100px);
+        background-position-y: bottom;
+        height: 100%;
+    }
+</style>
+{% endblock css %}
 
 
 {% block content %}
-
-
-<div class="container-fluid"
-    style="background-image: url(/media/customer_login.jpg); background-repeat: no-repeat; background-size: cover; height: 100%;">
+<div class="container-fluid bg-area">
     <h1 style="text-align: center;padding-top: 30px;">Customer Login</h1>
     <div class="row justify-content-center py-4">
         <div class="col-md-5 border border-3 border-primary p-4 rounded-4">

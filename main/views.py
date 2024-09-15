@@ -78,6 +78,7 @@ def register_view(request):
     return render(request, 'accounts/register_c.html')
 
 def dashboard_view(request):
+    print(request.session.values())
     return render(request, 'accounts/dashboard_c.html')
 
 def slogin_view(request):
