@@ -34,6 +34,7 @@
                                     <th>Price</th>
                                     <th>Qty</th>
                                     <th>Total</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
@@ -54,7 +55,13 @@
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-between">
-                                            {{item.quantity}}
+                                            <a class="btn btn-light rounded-circle" href="{% url 'decrease_qty' item.product.slug %}">
+                                                <i class="fa-solid fa-minus"></i>
+                                            </a>
+                                            <div style="padding-top: 5px;">{{item.quantity}}</div>
+                                            <a class="btn btn-light rounded-circle" href="{% url 'increase_qty' item.product.slug %}">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </a>
                                         </div>
                                     </td>
                                     <td>
@@ -63,20 +70,22 @@
                                         </div>
                                     </td>
 
+                                    <td>
+                                        <a class="btn btn-danger" href="{% url 'remove_product' item.product.slug %}">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                                 {% empty %}
                                 <tr class="table-primary">
                                     <td scope="row">No item in cart</td>
-                                    <td></td>
-                                    <td></td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
                             <tfoot>
-                                <tr class="table-light">
-                                    <td>Total</td>
-                                    <td></td>
-                                    <td></td>
+                                <tr class="table-light fw-bolder">
+                                    <td colspan="5">Total</td>
+                                    <td>{{total_price}}</td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -86,6 +95,19 @@
         </div>
         <div class="col-md-3">
             <!-- LATER -->
+            <div class="card">
+                <div class="card-body">
+                    <p class="display-3">
+                        {{total_price}} INR
+                        <div class="">No Charges on delivery</div>
+                    </p>
+                    <div class="d-grid">
+                        <a class="btn btn-lg btn-block btn-success" href="{% url 'checkout' %}">
+                            Checkout
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

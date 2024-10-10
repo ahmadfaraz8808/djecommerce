@@ -19,10 +19,19 @@
 <div class="container py-5">
     <div class="row">
         
-        
         <div class="col-md-3">
-            <!-- LATER -->
-
+        <!-- LATER -->
+        
+        {% comment %}
+            
+        {% for item in categories %}
+        <ul class="list-group">
+            <li class="list-group-item active" aria-current="true">{{ item.name }}</li>
+        </ul>
+        {% endfor%}
+        
+        {% endcomment %}
+            
         </div>
         <div class="col-md-9 mx-auto">
             <div class="container-fluid">

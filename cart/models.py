@@ -32,6 +32,8 @@ class Order(models.Model):
     is_paid = models.BooleanField(default=False)
     is_cancelled = models.BooleanField(default=False)
     address = models.TextField()
+    razorpay_order_id = models.CharField(max_length=255, null=True, blank=True)
+    razorpay_payment_id = models.CharField(max_length=255,null=True, blank=True)
     
     def __str__(self):
         return f"{self.product.title} - {self.user.username}"           ##??

@@ -1,8 +1,8 @@
 <div class="d-flex justify-content-center container mt-5">
-    <div class="card p-3 bg-white">
+    <div class="card p-3 bg-white" style="height: 450px;">
         <div class="about-product text-center mt-2">
             <a href="{% url 'product_detail' product.slug %}" class="text-decoration-none">
-                <h4>{{product.title|truncatewords:3}}</h4>
+                <h5>{{product.title|truncatewords:2}}</h5>
                 <img src="{{product.image.url}}" class="img-fluid" style="height: 150px; object-fit: cover;">
                 <div>
                     
@@ -17,7 +17,7 @@
         <div class="stats mt-2">
             <div class="d-flex justify-content-between p-price">
                 <span>Our Price</span>
-                <span>${{product.price}}<sup>only</sup></span>
+                <span>₹{{product.price}}<sup>only</sup></span>
             </div>
         </div>
         
@@ -33,11 +33,11 @@
         {% else %}
         <!-- action as customer or guest -->
         
-        <div class="d-flex justify-content-between mt-2 gap-2">
-            <a href="{% url 'wishlist_add' product.slug %}" class="btn btn-secondary">
+        <div class="d-flex justify-content-between mt-2 gap-2" style="position:absolute; bottom: 20px;height: 60px; padding-right: 12px;">
+            <a href="{% url 'wishlist_add' product.slug %}" class="btn btn-danger">
                 <i class="fas fa-heart"></i> Wishlist
             </a>
-            <a href="{% url 'add_product' product.slug %}" class="btn btn-success ">
+            <a href="{% url 'add_product' product.slug %}" class="btn btn-warning">
                 <i class="fas fa-shopping-cart"></i> Add to Cart
             </a>
         </div>

@@ -156,4 +156,6 @@ def sdashboard_view(request):
 
 def logout_view(request):
     logout(request)
+    # clear session
+    request.session.clear()
     return redirect('index')
