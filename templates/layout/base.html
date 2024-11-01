@@ -32,6 +32,11 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         ></script>
+
+        <!-- adding swiper
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+
         {% block head %} {% endblock  %}
         {% block css %} {% endblock  %}
     </head>
@@ -46,11 +51,11 @@
             <div class="alert alert-{{message.tags}} mb-0" role="alert">
                 <strong>{{message}}</strong>
             </div>
-     
+    
             {% endfor %}
-     
+    
             {% endif %}
-     
+    
         </header>
         <main>
             <!-- here we created a block named content to call the code of index.html file -->

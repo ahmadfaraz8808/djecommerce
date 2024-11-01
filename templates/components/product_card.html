@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center container mt-5">
-    <div class="card p-3 bg-white" style="height: 450px;">
+    <div class="card p-3 bg-white" style="height: 400px;">
         <div class="about-product text-center mt-2">
             <a href="{% url 'product_detail' product.slug %}" class="text-decoration-none">
                 <h5>{{product.title|truncatewords:2}}</h5>
@@ -9,7 +9,6 @@
                     {% comment %}
                     <h4>{{product.title|truncatewords:3}}</h4>
                     {% endcomment %}
-                        
                     <h6 class="mt-0 text-black-50">{{product.title}}</h6>
                 </div>
             </a>
@@ -22,18 +21,18 @@
         </div>
         
         {% if user.is_authenticated and user.groups.all.0.name == 'seller' %}
-        <div class="d-flex justify-content-between mt-2 gap-2">
-            <a href="{% url 'product_edit' product.slug %}" class="btn btn-warning w-100">
-                <i class="fas fa-edit"></i> Edit
+        <div class="d-flex justify-content-between mt-2 gap-2" style="position:absolute; bottom: 20px; height: 60px;">
+            <a href="{% url 'product_edit' product.slug %}" class="btn btn-warning " style="padding-right:20px; padding-top:15px; padding-left: 20px;">
+                <i class="fas fa-edit"></i> Edit  
             </a>
-            <a href="{% url 'product_delete' product.slug %}" class="btn btn-danger w-100">
-                <i class="fas fa-trash"></i> Delete
+            <a href="{% url 'product_delete' product.slug %}" class="btn btn-danger " style="margin-left: 10px; padding: 15px 10px 10px 10px;">
+                <i class="fas fa-trash"></i> Delete  
             </a>
         </div>
         {% else %}
         <!-- action as customer or guest -->
         
-        <div class="d-flex justify-content-between mt-2 gap-2" style="position:absolute; bottom: 20px;height: 60px; padding-right: 12px;">
+        <div class="d-flex justify-content-between mt-2 gap-2" style="position:absolute; bottom: 20px; height: 60px; padding-right: 12px;">
             <a href="{% url 'wishlist_add' product.slug %}" class="btn btn-danger">
                 <i class="fas fa-heart"></i> Wishlist
             </a>
